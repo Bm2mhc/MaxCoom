@@ -23,10 +23,10 @@ MonoBehaviour:
     y: 30
     width: 1266
     height: 573
-  m_MinSize: {x: 909, y: 422}
-  m_MaxSize: {x: 22004, y: 10000}
+  m_MinSize: {x: 919, y: 444}
+  m_MaxSize: {x: 22014, y: 10022}
   vertical: 0
-  controlID: 9974
+  controlID: 125
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,10 +129,10 @@ MonoBehaviour:
     y: 0
     width: 549
     height: 573
-  m_MinSize: {x: 202, y: 422}
-  m_MaxSize: {x: 4002, y: 8022}
+  m_MinSize: {x: 202, y: 444}
+  m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 9904
+  controlID: 126
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -341,7 +341,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3adaffff6adaffff76dbffff84dbffff74ebffff76ebffffaaf4ffffdaf4ffff20f5ffff28f5ffffb2f5ffffe0f5ffff26f6ffff2ef6ffff2ef7ffff5cf7ffffc0f8ffffc8f8ffff72fbfffff03c0000fa3c0000d6410000e04100005c480000da4c0000de4c0000e24d00001a6d0000c66d0000
+      m_ExpandedIDs: 72fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -432,17 +432,16 @@ MonoBehaviour:
     m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 64
-  m_LastFolders:
-  - Assets
+  m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\marin\Desktop\MaxCoom
+  m_LastProjectPath: C:\Users\marin\MaxCoom
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 502e0000
     m_LastClickedID: 11856
-    m_ExpandedIDs: ffffffff00000000c62e0000a22f00007a300000ba3100001a320000da3200009a3300009c340000a434000010350000e43500006e370000d638000018390000363a0000a03a00003c3b0000
+    m_ExpandedIDs: 00000000c62e0000a62f000080300000c431000024320000e4320000a4330000a6340000ae3400001a350000ee35000078370000e038000022390000403a0000aa3a0000463b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -467,10 +466,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 607}
-    m_SelectedIDs: ae6d0000
+    scrollPos: {x: 0, y: 383}
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000c62e0000a22f00007a300000ba3100001a320000da3200009a3300009c340000a434000010350000e43500006e370000d638000018390000363a0000a03a00003c3b0000
+    m_ExpandedIDs: ffffffff00000000c62e0000a62f000080300000c431000024320000e4320000a4330000a6340000ae3400001a350000ee35000078370000e038000022390000403a0000aa3a0000463b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -495,8 +494,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ae6d0000
-    m_LastClickedInstanceID: 28078
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -588,5 +587,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 28078
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0

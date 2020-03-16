@@ -76,13 +76,13 @@
     <Compile Include="Assets\_\Stuff\V_Animation\V_UnitAnimation.cs" />
     <Compile Include="Assets\_\Stuff\V_Animation\V_UnitSkeleton.cs" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/marin/Desktop/MaxCoom/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/marin/MaxCoom/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/marin/Desktop/MaxCoom/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/marin/MaxCoom/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/marin/Desktop/MaxCoom/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/marin/MaxCoom/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
