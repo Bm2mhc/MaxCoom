@@ -63,23 +63,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BGSoundScript.cs" />
-    <Compile Include="Assets\Game\Scripts\BoardManager.cs" />
-    <Compile Include="Assets\Game\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Game\Scripts\Loader.cs" />
-    <Compile Include="Assets\Health.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
-    <Compile Include="Assets\Quit.cs" />
+    <Compile Include="Assets\Scripts\BGSoundScript.cs" />
+    <Compile Include="Assets\Scripts\BattleHandler.cs" />
+    <Compile Include="Assets\Scripts\BattleOverWindow.cs" />
+    <Compile Include="Assets\Scripts\CharacterBattle.cs" />
+    <Compile Include="Assets\Scripts\Character_Base.cs" />
+    <Compile Include="Assets\Scripts\DamagePopup.cs" />
     <Compile Include="Assets\Scripts\Dice.cs" />
-    <Compile Include="Assets\Setings.cs" />
-    <Compile Include="Assets\Start.cs" />
-    <Compile Include="Assets\TurnBattleSystem\DamagePopups\DamagePopup.cs" />
-    <Compile Include="Assets\TurnBattleSystem\DamagePopups\Testing.cs" />
-    <Compile Include="Assets\TurnBattleSystem\Scripts\BattleHandler.cs" />
-    <Compile Include="Assets\TurnBattleSystem\Scripts\BattleOverWindow.cs" />
-    <Compile Include="Assets\TurnBattleSystem\Scripts\CharacterBattle.cs" />
-    <Compile Include="Assets\TurnBattleSystem\Scripts\Character_Base.cs" />
-    <Compile Include="Assets\TurnBattleSystem\Scripts\HealthSystem.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Quit.cs" />
+    <Compile Include="Assets\Scripts\Setings.cs" />
+    <Compile Include="Assets\Scripts\Start.cs" />
+    <Compile Include="Assets\Scripts\Testing.cs" />
+    <Compile Include="Assets\Scripts\dontdestory.cs" />
+    <Compile Include="Assets\Scripts\leveltext.cs" />
+    <Compile Include="Assets\Scripts\scroll.cs" />
     <Compile Include="Assets\_\Base\BaseScripts\CharacterAimHandler.cs" />
     <Compile Include="Assets\_\Base\BaseScripts\CharacterPositionMovementHandler.cs" />
     <Compile Include="Assets\_\Base\BaseScripts\CharacterSwordHandler.cs" />
@@ -181,8 +181,6 @@
     <Compile Include="Assets\_\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\_\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\_\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\dontdestory.cs" />
-    <Compile Include="Assets\scroll.cs" />
     <None Include="Assets\_\Stuff\Shaders\VertexLitCG.shader" />
     <None Include="Assets\_\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\_\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
