@@ -28,8 +28,10 @@ public class CharacterBattle : MonoBehaviour {
     public  HealthSystem healthSystem;
     private World_Bar healthBar;
     public int damageAmount;
+    public int healthof = 10;
     public int level = 1;
     public int upgradedamagevalue = 0;
+    public int upgradehealthvalue = 0;
     public leveltext ascript;
 
     public static int test = 8;
@@ -60,7 +62,7 @@ public class CharacterBattle : MonoBehaviour {
             characterBase.SetAnimsSwordShield();
             characterBase.GetMaterial().mainTexture = BattleHandler.GetInstance().enemySpritesheet;
         }
-        healthSystem = new HealthSystem(10);
+        healthSystem = new HealthSystem(healthof);
         healthBar = new World_Bar(transform, new Vector3(0, 15), new Vector3(12, 1.7f), Color.grey, Color.red, 1f, 100, new World_Bar.Outline { color = Color.black, size = .6f });
         healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
        
@@ -105,6 +107,12 @@ public class CharacterBattle : MonoBehaviour {
         upgradedamagevalue += 1;
     }
 
+    public void upgradehealt()
+    {
+        upgradehealthvalue += 1;
+        healthSystem.Heal(upgradehealthvalue * 2);
+
+    }
 
     public Vector3 GetPosition() {
         return transform.position;
@@ -247,16 +255,18 @@ public class CharacterBattle : MonoBehaviour {
 
     public void playerWins()
     {
+        healthSystem.Heal(10 + level * 2);
         level += 1;
-        healthSystem.Heal(10 + level*2);
         GameObject.FindGameObjectWithTag("P2Life").GetComponent<Health>().health += 10 + level*2;
 
     }
 
     public void enemyWins()
     {
-        healthSystem.Heal(10);
-        GameObject.FindGameObjectWithTag("P1Life").GetComponent<Health>().health += 10;
+        healthSystem.Heal(10 + upgradehealthvalue*2);
+        //healthSystem = new HealthSystem(10 + upgradehealthvalue*2);
+        healthSystem.healtupgrade(upgradehealthvalue * 2);
+        GameObject.FindGameObjectWithTag("P1Life").GetComponent<Health>().health += 10 + upgradehealthvalue * 2;
 
         if(level == 1)
         {

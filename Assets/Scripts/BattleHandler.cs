@@ -33,8 +33,10 @@ public class BattleHandler : MonoBehaviour {
     private CharacterBattle activeCharacterBattle;
     public CharacterBattle other;
     private State state;
-    //public Text textObject;
-    public int level;
+    public Text coinstext;
+    public Text leveltext;
+    public int level = 1;
+    public int coins = 0;
 
     private enum State {
         WaitingForPlayer,
@@ -47,6 +49,9 @@ public class BattleHandler : MonoBehaviour {
 
     public void Update()
     {
+
+        leveltext.text = "level " + level;
+        coinstext.text = "Coins " + coins;
 
         if (UnityEngine.Random.Range(1, 10) < 8)
         {
@@ -82,9 +87,14 @@ public class BattleHandler : MonoBehaviour {
 
     public void attackother()
     {
+        if (state == State.WaitingForPlayer)
+        {
+
+            state = State.Busy;
             playerCharacterBattle.Attack(enemyCharacterBattle, () => {
                 ChooseNextActiveCharacter();
             });
+        }
     }
 
     public void Heal()
@@ -111,7 +121,20 @@ public class BattleHandler : MonoBehaviour {
 
     public void upgradedamage()
     {
-        playerCharacterBattle.upgradedamage();
+        if (coins > 0)
+        {
+            playerCharacterBattle.upgradedamage();
+            coins -= 1;
+        }
+    }
+
+    public void upgradehealth()
+    {
+        if (coins > 1)
+        {
+            playerCharacterBattle.upgradehealt();
+            coins -= 2;
+        }
     }
 
 
@@ -173,6 +196,10 @@ public class BattleHandler : MonoBehaviour {
             //CodeMonkey.CMDebug.TextPopupMouse("Enemy Wins!");
             //BattleOverWindow.Show_Static("Enemy Wins!");
             playerCharacterBattle.enemyWins();
+            if (level > 1)
+            {
+                level -= 1;
+            }
            // textObject.text = "level " + playerCharacterBattle.level;
             // return true;
         }
@@ -181,6 +208,28 @@ public class BattleHandler : MonoBehaviour {
             //CodeMonkey.CMDebug.TextPopupMouse("Player Wins!");
             //BattleOverWindow.Show_Static("Player Wins!");
             enemyCharacterBattle.playerWins();
+            int randomcoinamount = UnityEngine.Random.Range(0, 1000);
+            if (randomcoinamount < 500)
+            {
+                coins += 1;
+            } else if(randomcoinamount > 500 && randomcoinamount < 700)
+            {
+                coins += 2;
+            } else if (randomcoinamount > 700 && randomcoinamount < 800)
+            {
+                coins += 3;
+            } else if (randomcoinamount > 800 && randomcoinamount < 900)
+            {
+                coins += 4;
+            } else if (randomcoinamount > 900 && randomcoinamount < 990)
+            {
+                coins += 5;
+            } else if (randomcoinamount > 990 && randomcoinamount < 1000)
+            {
+                coins += 10;
+            }
+           
+            level += 1;
           //  textObject.text = "level " + playerCharacterBattle.level;
 
             //return true;

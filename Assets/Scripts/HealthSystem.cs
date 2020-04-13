@@ -28,6 +28,7 @@ public class HealthSystem {
         health = healthMax;
     }
 
+
     public void SetHealthAmount(int health) {
         this.health = health;
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
@@ -69,4 +70,11 @@ public class HealthSystem {
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }
 
+    public void healtupgrade(int amount)
+    {
+        health += amount;
+        healthMax += amount;
+        if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
+    }
 }
+
