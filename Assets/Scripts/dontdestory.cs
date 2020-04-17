@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class dontdestory : MonoBehaviour
+public class Dontdestory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Awake()
+    //Sets up the gameobject music
+    public GameObject music;
+
+    void Start()
     {
         
     }
@@ -13,6 +16,7 @@ public class dontdestory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //The gameobject music does not destory when a new scene is loaded
+        DontDestroyOnLoad(music);
     }
 }

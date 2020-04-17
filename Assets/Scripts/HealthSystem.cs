@@ -1,16 +1,4 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,51 +16,42 @@ public class HealthSystem {
         health = healthMax;
     }
 
-
+    // sets the amount of health
     public void SetHealthAmount(int health) {
         this.health = health;
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }
-
+    
+    //takes the health and divides the healthMax this if for the healthbar
     public float GetHealthPercent() {
         return (float)health / healthMax;
     }
 
+    //Gets the amount of health
     public int GetHealthAmount() {
         return health;
     }
 
+    //Removes the damage from the health of either the player or enemy
     public void Damage(int amount) {
         health -= amount;
         if (health < 0) {
             health = 0;
         }
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
-
-       /* if (health <= 0) {
-            Die();
-        }*/
     }
 
-    public void Die() {
-        if (OnDead != null) OnDead(this, EventArgs.Empty);
-    }
-
+    //sets when the player is dead
     public bool IsDead() {
         return health <= 0;
     }
 
+   // Heals the player the amount healht the script gets
     public void Heal(int amount) {
         health += amount;
-        if (health > healthMax) {
+        /*if (health > healthMax) {
             health = healthMax;
-        }
-        if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
-    }
-
-    public void healtupgrade(int amount)
-    {
-        health += amount;
+        }*/
         healthMax += amount;
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }

@@ -1,16 +1,4 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +11,7 @@ public class BattleHandler : MonoBehaviour {
         return instance;
     }
 
-
+    // Setup with variables, int, text, scripts and gameobjects
     [SerializeField] private Transform pfCharacterBattle;
     public Texture2D playerSpritesheet;
     public Texture2D enemySpritesheet;
@@ -47,12 +35,15 @@ public class BattleHandler : MonoBehaviour {
         instance = this;
     }
 
+    //A function runing once per frame
     public void Update()
     {
-
+        //changing level and coin text every frame with current level and coins
         leveltext.text = "level " + level;
         coinstext.text = "Coins " + coins;
+        checkifcheat();
 
+        //Chosing to attack or heal
         if (UnityEngine.Random.Range(1, 10) < 8)
         {
             attacksimple();
@@ -66,7 +57,10 @@ public class BattleHandler : MonoBehaviour {
            // level = other.level;
            // Debug.Log(level);
         }
+
+        
     }
+    //Spawing Characters and setting states and activeplayers
     private void Start() {
         playerCharacterBattle = SpawnCharacter(true);
         enemyCharacterBattle = SpawnCharacter(false);
@@ -75,6 +69,16 @@ public class BattleHandler : MonoBehaviour {
         state = State.WaitingForPlayer;
     }
 
+    //Create a cheatcode when you press the buttons K, I and M down at the exact same time
+    private void checkifcheat()
+    {
+        if (Input.GetKeyDown(KeyCode.K) && Input.GetKeyDown(KeyCode.I) && Input.GetKeyDown(KeyCode.M))
+        {
+            coins += 100;
+        }
+    }
+    
+    //checking state and attacking other player, this one is called in update
     public void attacksimple() {
         if (state == State.WaitingForPlayer) {
             
@@ -85,6 +89,7 @@ public class BattleHandler : MonoBehaviour {
         }
     }
 
+    //checkingstate and attacking other player, this one is called from button attack
     public void attackother()
     {
         if (state == State.WaitingForPlayer)
@@ -97,6 +102,7 @@ public class BattleHandler : MonoBehaviour {
         }
     }
 
+    //checking state and healing player, this one is called from update
     public void Heal()
     {
         if (state == State.WaitingForPlayer)
@@ -110,6 +116,7 @@ public class BattleHandler : MonoBehaviour {
         }
     }
 
+    //checking state and healing player, this one is called from button healh
     public void Healother()
     {
             playerCharacterBattle.heal(playerCharacterBattle, () =>
@@ -119,6 +126,7 @@ public class BattleHandler : MonoBehaviour {
         
     }
 
+    //checking coins on player and upgrading damage and removing a coin
     public void upgradedamage()
     {
         if (coins > 0)
@@ -128,6 +136,7 @@ public class BattleHandler : MonoBehaviour {
         }
     }
 
+    //checking coins on player and upgrading health and removing two coins
     public void upgradehealth()
     {
         if (coins > 1)
@@ -137,7 +146,7 @@ public class BattleHandler : MonoBehaviour {
         }
     }
 
-
+    //spawing the characters at the right position
     private CharacterBattle SpawnCharacter(bool isPlayerTeam) {
         Vector3 position;
         if (isPlayerTeam) {
@@ -152,6 +161,7 @@ public class BattleHandler : MonoBehaviour {
         return characterBattle;
     }
 
+    //Choosing the active players
     private void SetActiveCharacterBattle(CharacterBattle characterBattle) {
         if (activeCharacterBattle != null) {
             activeCharacterBattle.HideSelectionCircle();
@@ -161,6 +171,7 @@ public class BattleHandler : MonoBehaviour {
         activeCharacterBattle.ShowSelectionCircle();
     }
 
+    //changing between the characters
     private void ChooseNextActiveCharacter() {
         if (TestBattleOver()) {
             return;
@@ -190,24 +201,17 @@ public class BattleHandler : MonoBehaviour {
         }
     }
 
+    //checking if game is over
     private bool TestBattleOver() {
        if (playerCharacterBattle.IsDead()) {
             // Player dead, enemy wins
-            //CodeMonkey.CMDebug.TextPopupMouse("Enemy Wins!");
-            //BattleOverWindow.Show_Static("Enemy Wins!");
             playerCharacterBattle.enemyWins();
-            if (level > 1)
-            {
-                level -= 1;
-            }
-           // textObject.text = "level " + playerCharacterBattle.level;
-            // return true;
         }
         if (enemyCharacterBattle.IsDead()) {
             // Enemy dead, player wins
-            //CodeMonkey.CMDebug.TextPopupMouse("Player Wins!");
-            //BattleOverWindow.Show_Static("Player Wins!");
             enemyCharacterBattle.playerWins();
+
+            //gives player a coin
             int randomcoinamount = UnityEngine.Random.Range(0, 1000);
             if (randomcoinamount < 500)
             {
@@ -229,10 +233,8 @@ public class BattleHandler : MonoBehaviour {
                 coins += 10;
             }
            
+            //Changes level
             level += 1;
-          //  textObject.text = "level " + playerCharacterBattle.level;
-
-            //return true;
         }
 
         return false;

@@ -6,6 +6,7 @@ public class Start : MonoBehaviour
 {
     public void dostart()
     {
+      //  Reloads the scene
         Application.LoadLevel(Application.loadedLevel);
     }
 }

@@ -1,14 +1,7 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
+﻿
 
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
+//We have not done anthing in this script
 
-               unitycodemonkey.com
-    --------------------------------------------------
- */
 
 using System.Collections;
 using System.Collections.Generic;

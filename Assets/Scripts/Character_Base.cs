@@ -1,4 +1,9 @@
-﻿using System;
+﻿
+
+//We have not done anthing in this script
+
+
+using System;
 using UnityEngine;
 using V_AnimationSystem;
 using CodeMonkey.Utils;
